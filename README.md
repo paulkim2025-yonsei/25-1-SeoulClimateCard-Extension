@@ -1,7 +1,7 @@
-[프로젝트 전체 보고서(PDF)](ClimateCard_Report.pdf)
-
 # 프로젝트 제목
 기후동행카드 범위 확장 제안 - 수도권 도시철도 중심
+
+[프로젝트 보고서(PDF)](25_1_DSL_EDA_도시환경.pdf)
 
 ## 프로젝트 멤버
 - 12기 김건우(팀장), 12기 김은희, 13기 박시현, 13기 박세현
@@ -48,6 +48,8 @@
 --------------------------------------------------
 # Project Title
 **Proposal for Expanding the Scope of the Seoul Climate Card(기후동행카드) – Focused on Metropolitan Subway(수도권 도시철도)**
+
+[Project Report(PDF)](25_1_DSL_EDA_도시환경.pdf)
 
 ## Project Members
 - **12th Cohort** KIM GEONWOO(김건우) — *Team Leader*  
