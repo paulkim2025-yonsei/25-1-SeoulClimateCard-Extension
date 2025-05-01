@@ -72,7 +72,7 @@ This project evaluates existing policies and proposes broader, more unified cove
 ### Data Collection & Pre-processing
 1. **Climate Companion Card Subway O/D Data**  
    - Selected only passengers paying the regular fare among total riders.  
-   - Unified outdated line and station names (e.g. *Ttukseom Resort(뚝섬유원지)* → *Jayang(자양)*).  
+   - Unified outdated line and station names (e.g. *Ttukseom Hangang Park(뚝섬유원지)* → *Jayang(자양)*).  
 2. **Labeling Availability**  
    - Labeled each section as available or unavailable according to current card coverage.  
 3. **Section Extraction**  
