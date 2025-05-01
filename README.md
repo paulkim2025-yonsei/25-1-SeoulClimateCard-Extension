@@ -45,10 +45,10 @@
 
 --------------------------------------------------
 # Project Title
-**Proposal for Expanding the Scope of the Climate Companion Card(기후동행카드) – Focused on Metropolitan Area Urban Rail(수도권 도시철도)**
+**Proposal for Expanding the Scope of the Seoul Climate Card(기후동행카드) – Focused on Metropolitan Subway(수도권 도시철도)**
 
 ## Project Members
-- **12th Cohort** Kim Geon-woo(김건우) — *Team Leader*  
+- **12th Cohort** KIM GEONWOO(김건우) — *Team Leader*  
 - **12th Cohort** Kim Eun-hee(김은희)  
 - **13th Cohort** Park Si-hyun(박시현)  
 - **13th Cohort** Park Se-hyun(박세현)  
@@ -61,16 +61,16 @@ The **Republic of Korea(대한민국)** offers many kinds of transit passes, yet
 This project evaluates existing policies and proposes broader, more unified coverage for transportation passes.
 
 ## Datasets Used
-- **Climate Companion Card Subway O/D Data(기후동행카드 지하철 O/D 데이터)**  
+- **Seoul Climate Card Subway O/D Data(기후동행카드 지하철 O/D 데이터)**  
 - **Station-level Demographic & Commercial-zone Data(역별 인구&상권 데이터)**  
   - floating population, net floating population, residential population, number of medical facilities, housing transactions  
-- **Metropolitan-Area Urban-Rail Station Information Data(수도권 도시철도 역사 정보 데이터)**  
+- **Metropolitan Subway Station Information Data(수도권 도시철도 역사 정보 데이터)**  
   - latitude / longitude, administrative districts, counts of lines, exits, and bus stops  
-- **Current Coverage of the Climate Companion Card(기후동행카드 지원 범위)**  
+- **Current Coverage of the Seoul Climate Card(기후동행카드 지원 범위)**  
 
 ## Project Details
 ### Data Collection & Pre-processing
-1. **Climate Companion Card Subway O/D Data**  
+1. **Seoul Climate Card Subway O/D Data**  
    - Selected only passengers paying the regular fare among total riders.  
    - Unified outdated line and station names (e.g. *Ttukseom Hangang Park(뚝섬유원지)* → *Jayang(자양)*).  
 2. **Labeling Availability**  
@@ -83,7 +83,7 @@ This project evaluates existing policies and proposes broader, more unified cove
 ### Analytical Methods
 | Method | Purpose & Notes |
 |--------|-----------------|
-| **Difference-in-Differences (DiD) Regression(DiD회귀분석)** | Estimates pure policy effects by comparing treated vs. untreated groups over time via a *treatment × time* interaction. |
+| **Difference-in-Differences (DiD) Regression** | Estimates pure policy effects by comparing treated vs. untreated groups over time via a *treatment × time* interaction. |
 | **Hypothesis Testing** | Normality checks, Pearson / Spearman rank correlations, VIF, OLS estimation, *p*-value significance. |
 | **ML / DL Time-series Models** | Five ML and three DL models predicted current ridership from the past *L* months, with all urban-environment variables as auxiliary features. Predicted and actual ridership were combined by weighted average to compute proposed card prices per route. |
 | **DBSCAN Clustering** | Clustered routes with increasing predicted ridership (based on origin/destination coordinates) to decide coverage by cluster rather than by individual section. |
@@ -101,8 +101,8 @@ This project evaluates existing policies and proposes broader, more unified cove
 - **Southern Corridor(남부권)** — **62 000 KRW** (maintain)  
   - *Line 1(1호선)* **Geumcheon-gu Office(금천구청)** – **Geumjeong(금정)**  
   - *Line 4(4호선)* **Geumjeong(금정)** – **Government Complex Gwacheon(정부과천청사)**  
-- **Northern Corridor(북부권)**  
-  - *Line 1(1호선)* **Hoeryong(회룡)** – **Dobong(도봉)** — **62 000 KRW** (maintain)  
+- **Northern Corridor(북부권)** — **62 000 KRW** (maintain)
+  - *Line 1(1호선)* **Hoeryong(회룡)** – **Dobong(도봉)**  
 
 ## Significance & Limitations
 ### Significance
