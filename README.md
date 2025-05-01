@@ -42,3 +42,75 @@
 - 원본 데이터가 매월 말일만 존재하였음
 - 버스에 대한 분석이 부족함
 - 각 지자체와 예산 등 협의해야할 부분이 여전히 다수 존재함
+
+--------------------------------------------------
+# Project Title
+**Proposal for Expanding the Scope of the Climate Companion Card(기후동행카드) – Focused on Metropolitan Area Urban Rail(수도권 도시철도)**
+
+## Project Members
+- **12th Cohort** Kim Geon-woo(김건우) — *Team Leader*  
+- **12th Cohort** Kim Eun-hee(김은희)  
+- **13th Cohort** Park Si-hyun(박시현)  
+- **13th Cohort** Park Se-hyun(박세현)  
+
+## Project Period
+*25 Jan 07 – 25 Feb 04*
+
+## Project Background
+The **Republic of Korea(대한민국)** offers many kinds of transit passes, yet their coverage is limited and the need for expansion is consistently raised.  
+This project evaluates existing policies and proposes broader, more unified coverage for transportation passes.
+
+## Datasets Used
+- **Climate Companion Card Subway O/D Data(기후동행카드 지하철 O/D 데이터)**  
+- **Station-level Demographic & Commercial-zone Data(역별 인구&상권 데이터)**  
+  - floating population, net floating population, residential population, number of medical facilities, housing transactions  
+- **Metropolitan-Area Urban-Rail Station Information Data(수도권 도시철도 역사 정보 데이터)**  
+  - latitude / longitude, administrative districts, counts of lines, exits, and bus stops  
+- **Current Coverage of the Climate Companion Card(기후동행카드 지원 범위)**  
+
+## Project Details
+### Data Collection & Pre-processing
+1. **Climate Companion Card Subway O/D Data**  
+   - Selected only passengers paying the regular fare among total riders.  
+   - Unified outdated line and station names (e.g. *Ttukseom Resort(뚝섬유원지)* → *Jayang(자양)*).  
+2. **Labeling Availability**  
+   - Labeled each section as available or unavailable according to current card coverage.  
+3. **Section Extraction**  
+   - Accumulated monthly passengers over **22 months**, chose adjacent-station sections in the top **40 %** ridership where the card is unusable, then re-extracted the original routes containing those sections.  
+4. **Urban-Environment Mapping**  
+   - For **32 495** extracted routes, mapped urban-environment indicators (floating & net floating population, residential population, medical facilities, housing transactions) using the administrative districts of origin and destination stations.
+
+### Analytical Methods
+| Method | Purpose & Notes |
+|--------|-----------------|
+| **Difference-in-Differences (DiD) Regression(DiD회귀분석)** | Estimates pure policy effects by comparing treated vs. untreated groups over time via a *treatment × time* interaction. |
+| **Hypothesis Testing** | Normality checks, Pearson / Spearman rank correlations, VIF, OLS estimation, *p*-value significance. |
+| **ML / DL Time-series Models** | Five ML and three DL models predicted current ridership from the past *L* months, with all urban-environment variables as auxiliary features. Predicted and actual ridership were combined by weighted average to compute proposed card prices per route. |
+| **DBSCAN Clustering(DBSCAN 클러스터링)** | Clustered routes with increasing predicted ridership (based on origin/destination coordinates) to decide coverage by cluster rather than by individual section. |
+
+## Project Conclusions
+- **Sinbundang Corridor(신분당선권)**  
+  - *Sinbundang Line(신분당선)* **Sinnonhyeon(신논현)** – **Jeongja(정자)**  
+  - *Suin–Bundang Line(수인분당선)* **Migeum(미금)** – **Bokjeong(복정)**  
+  - **66 000 KRW**  
+- **Western Corridor(서부권)** — **62 000 KRW** (maintain)  
+  - *Line 1(1호선)* **Onsu(온수)** – **Bupyeong(부평)**  
+  - *Line 7(7호선)* **Onsu(온수)** – **Bucheon Sports Complex(부천종합운동장)**  
+  - *Airport Railroad(공항철도)* **Gimpo Int’l Airport(김포공항)** – **Geomam(검암)**  
+  - *Seohae Line(서해선)* **Gimpo Int’l Airport(김포공항)** – **Bucheon Sports Complex(부천종합운동장)**  
+- **Southern Corridor(남부권)** — **62 000 KRW** (maintain)  
+  - *Line 1(1호선)* **Geumcheon-gu Office(금천구청)** – **Geumjeong(금정)**  
+  - *Line 4(4호선)* **Geumjeong(금정)** – **Government Complex Gwacheon(정부과천청사)**  
+- **Northern Corridor(북부권)**  
+  - *Line 1(1호선)* **Hoeryong(회룡)** – **Dobong(도봉)** — **62 000 KRW** (maintain)  
+
+## Significance & Limitations
+### Significance
+- Provides **user-demand-driven** policy direction instead of a purely top-down national approach.  
+- Leverages **big-data analysis** rather than survey-based methods of prior studies.  
+- Actively exploits **time-series characteristics** in modeling.
+
+### Limitations
+- Original ridership data exist only as **end-of-month snapshots**.  
+- **Bus data analysis** remains insufficient.  
+- Requires extensive **coordination with local governments** and budget negotiations.  
