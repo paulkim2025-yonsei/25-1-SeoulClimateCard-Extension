@@ -86,7 +86,7 @@ This project evaluates existing policies and proposes broader, more unified cove
 | **Difference-in-Differences (DiD) Regression(DiD회귀분석)** | Estimates pure policy effects by comparing treated vs. untreated groups over time via a *treatment × time* interaction. |
 | **Hypothesis Testing** | Normality checks, Pearson / Spearman rank correlations, VIF, OLS estimation, *p*-value significance. |
 | **ML / DL Time-series Models** | Five ML and three DL models predicted current ridership from the past *L* months, with all urban-environment variables as auxiliary features. Predicted and actual ridership were combined by weighted average to compute proposed card prices per route. |
-| **DBSCAN Clustering(DBSCAN 클러스터링)** | Clustered routes with increasing predicted ridership (based on origin/destination coordinates) to decide coverage by cluster rather than by individual section. |
+| **DBSCAN Clustering** | Clustered routes with increasing predicted ridership (based on origin/destination coordinates) to decide coverage by cluster rather than by individual section. |
 
 ## Project Conclusions
 - **Sinbundang Corridor(신분당선권)**  
