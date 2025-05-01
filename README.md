@@ -49,7 +49,7 @@
 # Project Title
 **Proposal for Expanding the Scope of the Seoul Climate Card(기후동행카드) – Focused on Metropolitan Subway(수도권 도시철도)**
 
-[Project Report(PDF)](25_1_DSL_EDA_도시환경.pdf)
+[Project Report-Korean(PDF)](25_1_DSL_EDA_도시환경.pdf)
 
 ## Project Members
 - **12th Cohort** KIM GEONWOO(김건우) — *Team Leader*  
